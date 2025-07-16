@@ -71,7 +71,7 @@ export const Edit = () => {
         </button>
 
         <button className={styles.deleteButton} onClick={handleDelete}>
-          <Trash size={18} /> <span>Deletar</span>
+          <Trash size={18} /> <span>Deletar Teste</span>
         </button>
       </div>
       <h2 className={styles.title}>Editar Tarefa</h2>
