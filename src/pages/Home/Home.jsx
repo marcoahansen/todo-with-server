@@ -4,11 +4,13 @@ import { buscarTarefas } from "../../services/apiService";
 import { TaskCard } from "../../components/TaskCard/TaskCard";
 import styles from "./Home.module.css";
 import { useNavigate } from "react-router";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const Home = () => {
   const [tarefas, setTarefas] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { nome } = useAuth();
 
   const getData = async () => {
     try {
@@ -29,7 +31,8 @@ export const Home = () => {
 
   if (loading) return <div>Carregando...</div>;
   return (
-  <div className={styles.wrapper}>
+    <div className={styles.wrapper}>
+      <h1>{nome}</h1>
       <button className={styles.newButton} onClick={() => navigate("/new")}>
         Nova Tarefa
       </button>
