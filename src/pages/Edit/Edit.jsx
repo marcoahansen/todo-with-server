@@ -8,6 +8,7 @@ import {
 import { TaskForm } from "../../components/TaskForm/TaskForm";
 import { ArrowLeft, Trash } from "lucide-react";
 import styles from "./Edit.module.css";
+import { useAuth } from "../../contexts/AuthContext";
 
 export const Edit = () => {
   const { id } = useParams();
@@ -15,6 +16,7 @@ export const Edit = () => {
   const [initialTarefa, setInitialTarefa] = useState(null);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
+  const { loadingUser } = useAuth();
 
   const getData = async () => {
     try {
@@ -61,7 +63,7 @@ export const Edit = () => {
     );
   };
 
-  if (!tarefa && loading) return <p>Carregando...</p>;
+  if (!tarefa && loading && loadingUser) return <p>Carregando...</p>;
 
   return (
     <div className={styles.container}>

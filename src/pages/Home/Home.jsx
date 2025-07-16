@@ -10,7 +10,7 @@ export const Home = () => {
   const [tarefas, setTarefas] = useState([]);
   const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
-  const { nome } = useAuth();
+  const { nome, loadingUser } = useAuth();
 
   const getData = async () => {
     try {
@@ -29,7 +29,7 @@ export const Home = () => {
 
   const statuses = ["pendente", "em progresso", "concluída"];
 
-  if (loading) return <div>Carregando...</div>;
+  if (loading && loadingUser) return <div>Carregando...</div>;
   return (
     <div className={styles.wrapper}>
       <h1>{nome}</h1>

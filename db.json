@@ -4,7 +4,7 @@
       "id": "1",
       "titulo": "Estudar react hoje",
       "descricao": "Revisar router e axios",
-      "status": "em progresso"
+      "status": "concluída"
     },
     {
       "id": "8436",
@@ -25,6 +25,12 @@
       "titulo": "estudar rotas privadas",
       "descricao": "estudar também context api",
       "status": "pendente"
+    },
+    {
+      "id": "0cf3",
+      "titulo": "teste",
+      "descricao": "teste",
+      "status": "em progresso"
     }
   ]
 }

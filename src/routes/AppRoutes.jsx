@@ -10,33 +10,41 @@ const PrivateRoutes = ({ children }) => {
   const { logado } = useAuth();
   return logado ? children : <Navigate to="/login" />;
 };
+const PublicRoutes = ({ children }) => {
+  const { logado } = useAuth();
+  return !logado ? children : <Navigate to="/" />;
+};
 
 export const AppRoutes = () => {
-  const { logado } = useAuth();
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/edit/:id"
-            element={
-              <PrivateRoutes>
-                <Edit />
-              </PrivateRoutes>
-            }
-          />
-          <Route
-            path="new"
-            element={
-              <PrivateRoutes>
-                <New />
-              </PrivateRoutes>
-            }
-          />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route
+          path="/login"
+          element={
+            <PublicRoutes>
+              <Login />
+            </PublicRoutes>
+          }
+        />
+        <Route
+          path="/edit/:id"
+          element={
+            <PrivateRoutes>
+              <Edit />
+            </PrivateRoutes>
+          }
+        />
+        <Route
+          path="new"
+          element={
+            <PrivateRoutes>
+              <New />
+            </PrivateRoutes>
+          }
+        />
+      </Route>
+    </Routes>
   );
 };
