@@ -1,12 +1,87 @@
-# React + Vite
+# 📝 Todo List com React + Vite + JSON Server
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Aplicação de lista de tarefas com rotas, edição, status organizados em colunas e backend simulado com JSON Server.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Tecnologias
 
-## Expanding the ESLint configuration
+- [React](https://reactjs.org/)
+- [Vite](https://vitejs.dev/)
+- [React Router](https://reactrouter.com/)
+- [Axios](https://axios-http.com/)
+- [Lucide Icons](https://lucide.dev/)
+- [JSON Server](https://github.com/typicode/json-server)
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 📦 Instalação
+
+1. **Clone o repositório:**
+
+```bash
+git clone https://github.com/seu-usuario/seu-repo.git
+cd seu-repo
+```
+
+2. **Instale as dependências:**
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Como rodar localmente
+
+### 1. Inicie o JSON Server (backend fake):
+
+```bash
+npm run mock
+```
+
+> Isso irá iniciar o JSON Server em: `http://localhost:3001`
+
+---
+
+### 2. Inicie o frontend com Vite:
+
+Em outro terminal:
+
+```bash
+npm run dev
+```
+
+> O frontend estará em: `http://localhost:5173`
+
+---
+
+## 🗂 Estrutura do Projeto
+
+```
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── routes/
+│   └── App.jsx
+├── db.json            # banco de dados simulado
+├── package.json
+└── vite.config.js
+```
+
+---
+
+## ✅ Funcionalidades
+
+- Adicionar, editar e deletar tarefas
+- Organização por status: pendente, em progresso, concluída
+- Interface responsiva e leve
+- Backend mock com persistência local via `db.json`
+
+---
+
+## 🧑‍💻 Autor
+
+- [@marcoahansen](https://github.com/marcoahansen)
