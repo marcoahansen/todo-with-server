@@ -1,7 +1,6 @@
 import styles from "./TaskForm.module.css";
 
-export const TaskForm = ({ task, onChange, onSubmit, isEditing = false }) => {
-  console.log(task);
+export const TaskForm = ({ task, onChange, onSubmit, isChanged, isEditing = false }) => {
   return (
     <form className={styles.form} onSubmit={onSubmit}>
       <label>
@@ -29,7 +28,7 @@ export const TaskForm = ({ task, onChange, onSubmit, isEditing = false }) => {
         </select>
       </label>
 
-      <button type="submit">
+      <button type="submit" disabled={!isChanged}>
         {isEditing ? "Salvar Alterações" : "Criar Tarefa"}
       </button>
     </form>

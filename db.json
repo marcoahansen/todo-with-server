@@ -1,16 +1,24 @@
 {
-    "tasks": [
-        {
-            "id": 1,
-            "titulo": "Estudar react",
-            "descricao": "Revisar router e axios",
-            "status": "pendente"
-        },
-        {
-            "id": 2,
-            "titulo": "Estudar react 2",
-            "descricao": "Revisar router e axios 2",
-            "status": "pendente"
-        }
-    ]
+  "tasks": [
+    {
+      "id": "1",
+      "titulo": "Estudar react hoje",
+      "descricao": "Revisar router e axios",
+      "status": "em progresso"
+    },
+    {
+      "id": "8436",
+      "title": "",
+      "description": "",
+      "status": "pendente",
+      "titulo": "nova tarefa teste",
+      "descricao": "teste"
+    },
+    {
+      "id": "3147",
+      "titulo": "teste criação",
+      "descricao": "teste",
+      "status": "pendente"
+    }
+  ]
 }

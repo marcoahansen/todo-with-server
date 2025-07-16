@@ -1,29 +1,47 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
-import TaskForm from "../../components/TaskForm/TaskForm";
+import { useNavigate } from "react-router";
+import { criarTarefa } from "../../services/apiService";
+import { TaskForm } from "../../components/TaskForm/TaskForm";
+import { ArrowLeft } from "lucide-react";
+import styles from "./New.module.css";
 
-export const NewTask = () => {
+export const New = () => {
   const navigate = useNavigate();
-  const [tarefa, setTarefa] = useState({
-    title: "",
-    description: "",
-    status: "pendente",
-  });
+
+  const initialTarefa = {
+  titulo: "",
+  descricao: "",
+  status: "pendente",
+};
+  const [tarefa, setTarefa] = useState(initialTarefa);
 
   const handleChange = (e) => {
-    setTarefa({ ...task, [e.target.name]: e.target.value });
+    setTarefa({ ...tarefa, [e.target.name]: e.target.value });
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    await criarTarefa(task);
+    await criarTarefa(tarefa);
     navigate("/");
   };
 
-  return (
-    <div>
-      <h2 style={{ textAlign: "center" }}>Nova Tarefa</h2>
-      <TaskForm task={tarefa} onChange={handleChange} onSubmit={handleSubmit} />
-    </div>
-  );
+  const isChanged =
+    tarefa.titulo.trim() !== initialTarefa.titulo ||
+    tarefa.descricao.trim() !== initialTarefa.descricao ||
+    tarefa.status !== initialTarefa.status;
+
+ return (
+  <div className={styles.container}>
+    <button className={styles.backButton} onClick={() => navigate("/")}>
+      <ArrowLeft size={18} /> <span>Voltar</span>
+    </button>
+    <h2 className={styles.title}>Nova Tarefa</h2>
+    <TaskForm
+      task={tarefa}
+      onChange={handleChange}
+      onSubmit={handleSubmit}
+      isChanged={isChanged}
+    />
+  </div>
+);
 };

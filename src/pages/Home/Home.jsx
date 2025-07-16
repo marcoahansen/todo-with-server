@@ -3,10 +3,12 @@ import { useState } from "react";
 import { buscarTarefas } from "../../services/apiService";
 import { TaskCard } from "../../components/TaskCard/TaskCard";
 import styles from "./Home.module.css";
+import { useNavigate } from "react-router";
 
 export const Home = () => {
   const [tarefas, setTarefas] = useState([]);
   const [loading, setLoading] = useState(true);
+  const navigate = useNavigate();
 
   const getData = async () => {
     try {
@@ -27,17 +29,23 @@ export const Home = () => {
 
   if (loading) return <div>Carregando...</div>;
   return (
-    <div className={styles.container}>
-      {statuses.map((status) => (
-        <div key={status} className={styles.column}>
-          <h2>{status.toUpperCase()}</h2>
-          {tarefas
-            .filter((t) => t.status === status)
-            .map((tarefa) => (
-              <TaskCard key={tarefa.id} tarefa={tarefa} />
-            ))}
-        </div>
-      ))}
+  <div className={styles.wrapper}>
+      <button className={styles.newButton} onClick={() => navigate("/new")}>
+        Nova Tarefa
+      </button>
+
+      <div className={styles.container}>
+        {statuses.map((status) => (
+          <div key={status} className={styles.column}>
+            <h2>{status.toUpperCase()}</h2>
+            {tarefas
+              .filter((t) => t.status === status)
+              .map((tarefa) => (
+                <TaskCard key={tarefa.id} tarefa={tarefa} />
+              ))}
+          </div>
+        ))}
+      </div>
     </div>
   );
 };

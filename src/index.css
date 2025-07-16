@@ -13,6 +13,31 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+:root {
+  --bg: #ffffff;
+  --text: #213547;
+  --card-bg: #ececec;
+  --input-bg: #ffffff;
+  --border: #ccc;
+  --button-bg: #3b82f6;
+  --button-bg: #3b82f6;
+  --button-hover: #2563eb;
+  --button-bg-disabled: #5982c5;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1a1a1a;
+    --text: #ffffff;
+    --card-bg: #3c3c3c;
+    --input-bg: #2c2c2c;
+    --border: #444;
+    --button-bg: #2563eb;
+    --button-hover: #1e40af;
+    --button-bg-disabled: #5982c5;
+  }
+}
+
 a {
   font-weight: 500;
   color: #646cff;
@@ -24,8 +49,6 @@ a:hover {
 
 body {
   margin: 0;
-  display: flex;
-  place-items: center;
   min-width: 320px;
   min-height: 100vh;
 }

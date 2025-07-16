@@ -1,0 +1,32 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  color: var(--text);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  background-color: transparent;
+  border: none;
+  color: var(--button-bg);
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+  transition: color 0.2s ease;
+}
+
+.backButton:hover {
+  color: var(--button-hover);
+  text-decoration: underline;
+}

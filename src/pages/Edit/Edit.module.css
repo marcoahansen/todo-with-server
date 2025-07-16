@@ -1,0 +1,50 @@
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 2rem;
+  border-radius: 12px;
+  color: var(--text);
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+.topBar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.backButton,
+.deleteButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  cursor: pointer;
+  color: var(--button-bg);
+  transition: color 0.2s;
+}
+
+.backButton:hover,
+.deleteButton:hover {
+  color: var(--button-hover);
+  background-color: transparent;
+  text-decoration: underline;
+}
+
+.deleteButton {
+  color: #ef4444;
+}
+
+.deleteButton:hover {
+  color: #dc2626;
+}
+
+
